@@ -9,6 +9,9 @@ Pré-requis
 Pour fonctionner ce script a besoin de wp-cli. Installer le en suivant les instructions qui vous trouverez ici :
 http://wp-cli.org/
 
+Compass est également requis
+http://compass-style.org/install/
+
 config.conf
 -----------
 
