@@ -9,8 +9,7 @@ function help(){
 }
 
 # test the number of arguments
-if [ $1 ]
-then
+if [ $1 ]; then
   # On récupére notre fichier de config
   CONFIG_FILE=$PWD/config.conf
 
@@ -23,11 +22,20 @@ then
   WP_URL="$PROJECT_NAME.local"
   WP_DIR="$WORK_DIR$PROJECT_NAME"
 
+
   # On crée notre dossier
+  cd $WORK_DIR
   mkdir $WP_DIR ;cd $WP_DIR
 
-  # On crée un dépot git
-  git init
+
+  # On récupére notre projet gitolite
+  git clone alwaysdata_gitolite:$PROJECT_NAME .
+
+  # Si il y a un dossier web on travail dedans
+  if [ -d web ];
+  then
+    cd web
+  fi
 
   # On install et parametre wordpress
   wp core download --locale=fr_FR
@@ -40,10 +48,6 @@ then
 
   # TODO le créer si il n'existe pas
 
-  # On récupére notre projet gitolite
-  git remote add origin alwaysdata_gitolite:$PROJECT_NAME
-
-  git pull origin master
 
   # On crée le virtual host
   (sudo sh -c "echo '\n<VirtualHost *:80>
