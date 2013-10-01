@@ -188,17 +188,37 @@ _EOF_
 
   fi
 
-  # On crée le virtual host
-  (sudo sh -c "echo '\n<VirtualHost *:80>
-     DocumentRoot \"$WP_WEB_DIR\"
-     ServerName $WP_URL
-     ServerAlias $WP_URL
-     <Directory \"$WP_WEB_DIR\">
-         Options FollowSymLinks
-         AllowOverride All
-     </Directory>
-  </VirtualHost>
-  ' >> /etc/apache2/extra/httpd-vhosts.conf")
+  if [ -d /etc/apache2/sites-available ];
+  then
+    # On crée le virtual host
+    (sudo sh -c "echo '\n<VirtualHost *:80>
+       DocumentRoot \"$WP_WEB_DIR\"
+       ServerName $WP_URL
+       ServerAlias $WP_URL
+       <Directory \"$WP_WEB_DIR\">
+           Options FollowSymLinks
+           AllowOverride All
+       </Directory>
+    </VirtualHost>
+    ' >> /etc/apache2/sites-available/$PROJECT_NAME")
+
+    #On active le site
+    (sudo sh -c "a2ensite $PROJECT_NAME")
+  else
+    # On crée le virtual host
+    (sudo sh -c "echo '\n<VirtualHost *:80>
+       DocumentRoot \"$WP_WEB_DIR\"
+       ServerName $WP_URL
+       ServerAlias $WP_URL
+       <Directory \"$WP_WEB_DIR\">
+           Options FollowSymLinks
+           AllowOverride All
+       </Directory>
+    </VirtualHost>
+    ' >> /etc/apache2/extra/httpd-vhosts.conf")
+  fi
+
+  
 
   (sudo sh -c "apachectl restart")
 
