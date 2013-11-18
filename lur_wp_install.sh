@@ -19,7 +19,7 @@ function install_wordpress(){
 
   wp core config --dbname=wp_$PROJECT_NAME --dbuser=$DBUSER --dbpass=$DBPASS
 
-  mysqladmin -u $DBUSER -p$DBPASS create wp_$PROJECT_NAME
+  wp db create
 
   wp core install --url=$WP_URL --title=$PROJECT_NAME --admin_email=$ADMIN_EMAIL --admin_password=$ADMIN_PASSWORD
 
@@ -199,7 +199,7 @@ _EOF_
            Options FollowSymLinks
            AllowOverride All
        </Directory>
-      ErrorLog /var/log/apache2/$PROJECT_NAME.error.log
+      ErrorLog /var/log/apache2/$PROJECT_NAME.error.log:wq
       CustomLog /var/log/apache2/$PROJECT_NAME.access.log combined
     </VirtualHost>
     ' >> /etc/apache2/sites-available/$PROJECT_NAME")
@@ -226,7 +226,7 @@ _EOF_
 
   (sudo sh -c "apachectl restart")
 
-  (sudo sh -c "echo -e '\n127.0.0.1 $WP_URL' >> /etc/hosts" )
+  (sudo sh -c "echo '\n127.0.0.1 $WP_URL' >> /etc/hosts" )
 
   echo "$PROJECT_NAME crée à l'adresse : $WP_URL"
   exit 0
