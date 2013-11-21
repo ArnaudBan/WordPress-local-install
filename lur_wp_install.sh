@@ -199,7 +199,7 @@ _EOF_
            Options FollowSymLinks
            AllowOverride All
        </Directory>
-      ErrorLog /var/log/apache2/$PROJECT_NAME.error.log:wq
+      ErrorLog /var/log/apache2/$PROJECT_NAME.error.log
       CustomLog /var/log/apache2/$PROJECT_NAME.access.log combined
     </VirtualHost>
     ' >> /etc/apache2/sites-available/$PROJECT_NAME")
@@ -219,7 +219,7 @@ _EOF_
       ErrorLog /var/log/apache2/$PROJECT_NAME.error.log
       CustomLog /var/log/apache2/$PROJECT_NAME.access.log combined
     </VirtualHost>
-    ' >> /etc/apache2/extra/vhosts.d/$PROJECT_NAME.conf")
+    ' >> /etc/apache2/vhosts.d/$PROJECT_NAME.conf")
   fi
 
 
