@@ -21,7 +21,7 @@ function install_wordpress(){
 
   wp db create
 
-  wp core install --url=$WP_URL --title=$PROJECT_NAME --admin_email=$ADMIN_EMAIL --admin_user=admin --admin_password=$ADMIN_PASSWORD
+  wp core install --url=$WP_URL --title=$PROJECT_NAME --admin_email=$ADMIN_EMAIL --admin_user=$ADMIN_USER --admin_password=$ADMIN_PASSWORD
 
 }
 
