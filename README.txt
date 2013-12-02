@@ -23,7 +23,8 @@ Vous devez y paramétrer :
   * DBUSER="root"                                           - Votre nom d'utilisateur pour MySQL
   * DBPASS="root"                                           - Votre mot de passe MySQL
   * ADMIN_EMAIL="abanvillet@eluere.com"                     - L'email Admin que vous souhaitez pour vos install WordPress
-  * ADMIN_PASSWORD="admin"                                  - Mot de passe WordPress de votre install local. Le nom d'utilisatateur sera "admin"
+  * ADMIN_USER="admin"                                      - Nom du premier utilisteur
+  * ADMIN_PASSWORD="admin"                                  - Mot de passe WordPress pour votre premier utilisateur
 
 Utilisation
 -----------
