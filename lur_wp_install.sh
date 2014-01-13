@@ -88,7 +88,8 @@ _EOF_
 # On test si le seul argument est présent
 if [ $1 ]; then
   # On récupére notre fichier de config
-  CONFIG_FILE=$PWD/config.conf
+  BASEDIR=$(dirname $0)
+  CONFIG_FILE=$BASEDIR/config.conf
 
   if [[ -f $CONFIG_FILE ]]; then
           . $CONFIG_FILE
