@@ -118,7 +118,7 @@ if [ $1 ]; then
     exit 1
   fi
 
-  if grep -q "^repo\t*$PROJECT_NAME$" conf/gitolite.conf
+  if grep -q "^repo\s*$PROJECT_NAME$" conf/gitolite.conf
   then # Notre projet existe
 
     # On récupére notre projet gitolite
