@@ -17,7 +17,12 @@ function install_wordpress(){
   # On install et parametre wordpress
   wp core download --locale=fr_FR
 
-  wp core config --dbname=wp_$PROJECT_NAME --dbuser=$DBUSER --dbpass=$DBPASS
+  wp core config --dbname=wp_$PROJECT_NAME --dbuser=$DBUSER --dbpass=$DBPASS --extra-php <<PHP
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+PHP
+
+  wp plugin install developer --activate
 
   wp db create
 
