@@ -33,7 +33,7 @@ Vous devez y paramétrer :
   * GITOLITE_DIR="/Users/arnaud/Workspace/_gitolite-admin/" - Le chemin vers votre dépot local de gitolite
   * DBUSER="root"                                           - Votre nom d'utilisateur pour MySQL
   * DBPASS="root"                                           - Votre mot de passe MySQL
-  * ADMIN_EMAIL="abanvillet@eluere.com"                     - L'email Admin que vous souhaitez pour vos install WordPress
+  * ADMIN_EMAIL="arnaud.banvillet@gmail.com"                     - L'email Admin que vous souhaitez pour vos install WordPress
   * ADMIN_USER="admin"                                      - Nom du premier utilisteur
   * ADMIN_PASSWORD="admin"                                  - Mot de passe WordPress pour votre premier utilisateur
 

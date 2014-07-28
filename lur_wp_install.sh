@@ -5,9 +5,9 @@
 # Affichage de l'aide
 function help(){
   # On ne peut rien faire sans le nom du projet
-  echo "LUR WordPress Installer - Installer ou créer en une ligne votre projet WordPress en local"
+  echo "WordPress local install - Installer ou créer en une ligne votre projet WordPress en local"
   echo ""
-  echo "Pour l'utiliser il faut entrer comme paramétre le nom du projet qui dois correspondre au dépot gitolite"
+  echo "Pour l'utiliser il faut entrer comme paramétre le nom du projet qui dois correspondre au dépot dans gitolite"
   echo "    $0 project_name"
 }
 
@@ -62,14 +62,13 @@ function init_wp_theme(){
   cat << _EOF_ > wp-content/themes/$PROJECT_NAME/style.css
 /*
  * Theme Name: Thème $PROJECT_NAME
- * Theme URI: [[ Adresse du site, ex : http://silverwood.fr/ ]]
- * Description: [[ Descriptif du thème : Thème sur mesure pour silverwood.fr. ]]
+ * Theme URI: $WP_URL
+ * Description: Thème sur mesure $PROJECT_NAME
  * Version: 1.0
- * Author: Eluère & associés
- * Author URI: http://www.eluere.com/
- * Tags: [[ Nom du client, ex: silverwood ]], Eluère, wordpress
+ * Author: $ADMIN_USER
+ * Tags: $PROJECT_NAME, wordpress
  *
- * @package    [[ Adresse du site, ex : silverwood.fr.]]
+ * @package    $PROJECT_NAME
  * @subpackage wordpress theme
  *
  */
