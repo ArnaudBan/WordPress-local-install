@@ -102,7 +102,7 @@ if [ $1 ]; then
 
   # On crée nos variables
   PROJECT_NAME="$1"
-  WP_URL="$PROJECT_NAME.local"
+  WP_URL="$PROJECT_NAME.dev"
   WP_DIR="$WORK_DIR$PROJECT_NAME"
   WP_WEB_DIR="$WORK_DIR$PROJECT_NAME/web"
 
