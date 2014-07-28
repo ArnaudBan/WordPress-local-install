@@ -30,7 +30,7 @@ Créer votre fichier de configuration en duplicant le fichier config-sample.conf
 Vous devez y paramétrer :
 
   * WORK_DIR="/Users/arnaud/Workspace/"                     _Le chemin complet vers votre dossier local où sont installer vos fichiers_
-  * GITOLITE_DIR="/Users/arnaud/Workspace/_gitolite-admin/" _Le chemin vers votre dépot local de gitolite_
+  * GITOLITE_DIR="/Users/arnaud/Workspace/\_gitolite-admin/" _Le chemin vers votre dépot local de gitolite_
   * DBUSER="root"                                           _Votre nom d'utilisateur pour MySQL_
   * DBPASS="root"                                           _Votre mot de passe MySQL_
   * ADMIN_EMAIL="arnaud.banvillet@gmail.com"                _L'email Admin que vous souhaitez pour vos install WordPress_
